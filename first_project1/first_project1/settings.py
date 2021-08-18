@@ -115,7 +115,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 
-LANGUAGE_CODE = 'Asia/Kolkata'      # Change this to match timezone of your server
+LANGUAGE_CODE = 'en-us'      # Change this to match timezone of your server
 
 TIME_ZONE = 'UTC'
 
