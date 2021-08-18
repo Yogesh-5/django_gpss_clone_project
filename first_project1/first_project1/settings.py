@@ -25,7 +25,7 @@ SECRET_KEY = '1+w-*hye^w)f%wggezkg0hc4d!_d!!u^5k6ex0mokn0*o=q@#8'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False                                               # change it true to debug
 
-ALLOWED_HOSTS = ['gpss-cp.herokuapp.com','127.0.0.1']       # Change here whenever you want to host this project on a different server
+ALLOWED_HOSTS = ['gpss-np.herokuapp.com','127.0.0.1']       # Change here whenever you want to host this project on a different server
 #ALLOWED_HOSTS = ['']                                       # uncomment this to allow any host or while debugging
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage' # comment this line when debugging
