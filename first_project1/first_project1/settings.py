@@ -23,10 +23,12 @@ TEMPLATE_DIR = os.path.join(BASE_DIR,"templates")
 SECRET_KEY = '1+w-*hye^w)f%wggezkg0hc4d!_d!!u^5k6ex0mokn0*o=q@#8'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False                                               # change it true to debug
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['gpss-cp.herokuapp.com','127.0.0.1']       # Change here whenever you want to host this project on a different server
+#ALLOWED_HOSTS = ['']                                       # uncomment this to allow any host or while debugging
 
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage' # comment this line when debugging
 
 # Application definition
 
@@ -48,6 +50,9 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+
+    'whitenoise.middleware.WhiteNoiseMiddleware',
+    
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -110,10 +115,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'Asia/Kolkata'      # Change this to match timezone of your server
 
-#TIME_ZONE = 'UTC'
-TIME_ZONE =  'Asia/Kolkata'
+TIME_ZONE = 'UTC'
 
 USE_I18N = True
 
@@ -125,11 +129,14 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')     #comment this when debugging
+
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR,"static")]
-VENV_PATH = os.path.dirname(BASE_DIR)
-STATIC_ROOT = os.path.join(VENV_PATH, 'static_root')
 
+#VENV_PATH = os.path.dirname(BASE_DIR)
+#STATIC_ROOT = os.path.join(VENV_PATH, 'static_root')
 
 LOGIN_REDIRECT_URL = 'test'
 LOGOUT_REDIRECT_URL = 'thanks'

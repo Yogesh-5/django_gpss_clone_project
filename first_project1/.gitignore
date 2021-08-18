@@ -3,3 +3,5 @@ django3
 
 # pycache
 *.pyc
+*~
+*.swp
